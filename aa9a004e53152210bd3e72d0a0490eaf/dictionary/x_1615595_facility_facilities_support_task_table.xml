@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4cd0859e53912210bd3e72d0a0490eee" extends="task" label="Facilities Support Task Table" max_length="40" name="x_1615595_facility_facilities_support_task_table" type="collection">
+        <element dependent="assignment_groups" dependent_on_field="assignment_groups" label="Assigned to" max_length="32" name="assigned_t0" reference="sys_user_grmember" type="reference" use_dependent_field="true"/>
+        <element choice="1" dependent="category" dependent_on_field="category" label="Sub-Category" max_length="40" name="sub_category" type="choice" use_dependent_field="true">
+            <choice>
+                <element dependent_value="Maintenance Services" inactive_on_update="false" label="Lighting" sequence="9" value="Lighting"/>
+                <element dependent_value="Maintenance Services" inactive_on_update="false" label="Walls" sequence="11" value="Walls"/>
+                <element dependent_value="Maintenance Services" inactive_on_update="false" label="Sanitary" sequence="13" value="Sanitary"/>
+                <element dependent_value="Maintenance Services" inactive_on_update="false" label="Alarm" sequence="8" value="Alarm"/>
+                <element dependent_value="Maintenance Services" inactive_on_update="false" label="Furniture" sequence="10" value="Furniture"/>
+                <element dependent_value="Maintenance Services" inactive_on_update="false" label="Hallways" sequence="12" value="Hallways"/>
+                <element dependent_value="Maintenance Services" inactive_on_update="false" label="Copiers" sequence="14" value="Copiers"/>
+                <element dependent_value="Cleaning Services" inactive_on_update="false" label="Monthly" sequence="2" value="Monthly"/>
+                <element dependent_value="Climate Control Services" inactive_on_update="false" label="Air Conditioning" sequence="16" value="Air Conditioning"/>
+                <element dependent_value="Cleaning Services" inactive_on_update="false" label="Daily" sequence="0" value="Daily"/>
+                <element dependent_value="Maintenance Services" inactive_on_update="false" label="Others" sequence="15" value="Others"/>
+                <element dependent_value="Cleaning Services" inactive_on_update="false" label="Weekly" sequence="1" value="Weekly"/>
+                <element dependent_value="Cleaning Services" inactive_on_update="false" label="Others" sequence="3" value="Others"/>
+                <element dependent_value="Climate Control Services" inactive_on_update="false" label="Others" sequence="17" value="Others"/>
+                <element dependent_value="Catering Services" inactive_on_update="false" label="Coffee Machines" sequence="5" value="Coffee Machines"/>
+                <element dependent_value="Catering Services" inactive_on_update="false" label="Others" sequence="7" value="Others"/>
+                <element dependent_value="Catering Services" inactive_on_update="false" label="Vending Machines" sequence="4" value="Vending Machines"/>
+                <element dependent_value="Catering Services" inactive_on_update="false" label="Water Dispensers" sequence="6" value="Water Dispensers"/>
+                <element dependent_value="Other Services" inactive_on_update="false" label="Others" sequence="25" value="Others"/>
+                <element dependent_value="Security Services" inactive_on_update="false" label="Surveillance" sequence="19" value="Surveillance"/>
+                <element dependent_value="Security Services" inactive_on_update="false" label="Consulting Services" sequence="21" value="Consulting Services"/>
+                <element dependent_value="Security Services" inactive_on_update="false" label="CCTV" sequence="23" value="CCTV"/>
+                <element dependent_value="Security Services" inactive_on_update="false" label="Physical Security" sequence="18" value="Physical Security"/>
+                <element dependent_value="Security Services" inactive_on_update="false" label="Technical Installations" sequence="20" value="Technical Installations"/>
+                <element dependent_value="Security Services" inactive_on_update="false" label="Fire" sequence="22" value="Fire"/>
+                <element dependent_value="Security Services" inactive_on_update="false" label="Others" sequence="24" value="Others"/>
+            </choice>
+        </element>
+        <element label="Rooms" max_length="32" name="rooms" reference="x_1615595_facility_support_rooms" reference_qual="roomISNOTEMPTY" reference_qual_condition="roomISNOTEMPTY" type="glide_list"/>
+        <element choice="1" label="Category" max_length="40" name="category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Cleaning Services" sequence="0" value="Cleaning Services"/>
+                <element inactive_on_update="false" label="Maintenance Services" sequence="2" value="Maintenance Services"/>
+                <element inactive_on_update="false" label="Security Services" sequence="4" value="Security Services"/>
+                <element inactive_on_update="false" label="Catering Services" sequence="1" value="Catering Services"/>
+                <element inactive_on_update="false" label="Climate Control Services" sequence="3" value="Climate Control Services"/>
+                <element inactive_on_update="false" label="Other Services" sequence="5" value="Other Services"/>
+            </choice>
+        </element>
+        <element label="Requester" mandatory="true" max_length="32" name="requester" reference="sys_user" type="reference"/>
+        <element dependent="location" dependent_on_field="location" label="Room" max_length="32" name="room" reference="x_1615595_facility_support_rooms" type="reference" use_dependent_field="true"/>
+        <element label="Assignment Groups" max_length="1024" name="assignment_groups" reference="sys_user_group" type="reference"/>
+    </element>
+</database>
